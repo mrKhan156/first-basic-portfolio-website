@@ -28,10 +28,11 @@ body{
 .nav_list{
     background-color: rgb(184, 239, 220);
     display: flex;
-
-    gap: 20px;
+ align-items: center;
+ justify-content: space-between;
+    gap: 60px;
     margin: 0;
-    padding: 20px 0px;
+    padding: 20px 20px;
     list-style-type: none;
     justify-content: center;
     
@@ -47,45 +48,52 @@ body{
     color:rgb(214, 68, 204) ;
 }
 .banner{
-    background-image: url("..//images/1st\ background.jpg");
+    background-image: url("../images/coad\ pic.jpeg");
+ min-height: 500px;
+ width: 100%;
     color: rgb(209, 207, 205);
+    margin-top: -30px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 .banner_contant{
-    text-align: left;
-    padding-top: 130px;
-    padding-bottom: 170px;
+    text-align: right;
+
 
 
 }
 
 .banner_heading{
+   padding-top: 80px;
     font-family: var(--montserrat);
     text-transform: uppercase;
     font-size: 40px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
 }
 .second_content{
     font-family: var(--montserrat);
     text-transform: uppercase;
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     min-height: 51.2px;
 }
-.banner_pg{
-    width: 50%;
-    font-family: var(--opensans);
-    margin-bottom: 40px;
+
+.banner_contant p{
+    max-width: 200px;
+    text-align: right;
 
 }
 .banner_button{
-    color: rgb(238, 232, 232);
+    color: rgb(0, 0, 0);
     text-decoration:none;
     font-family: var(--montserrat);
     display: inline-block;
-    background-color: black;
+    background-color: rgb(114, 227, 33);
     padding: 20px 25px;
     border-radius: 25px;
 }
@@ -159,14 +167,14 @@ body{
     
 }
 .about_content{
-    
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    padding: 10px 0px;
-    gap: 30px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 30px;
 }
 .about_image{
     padding-top: 20px;
+    flex-basis: 45%;
    
 }
 .about_image img{
@@ -174,7 +182,7 @@ body{
     border-radius: 5px;
 }
 .about_description{
-    
+    flex-basis: 45%;
     padding-left: 10px;
 }
 .about_h{
@@ -190,6 +198,13 @@ body{
 .about_description_p{
     font-family: var(--opensans);
     color: rgb(17, 17, 17);
+}
+.about_description h3{
+    font-family: var(--montserrat);
+    text-decoration: underline;
+}
+.about_description ul{
+    font-family: var(--opensans);
 }
 .portfolio{
     background-color: rgb(226, 229, 233);
