@@ -184,17 +184,18 @@
     <div class="container">
             <div class="heading_rapper">
                 <h1 class="heding_title">Get In Touch</h1>
-                <p class="heading_description">Lorem ipsum dolor sit amet.</p>
     
             </div>
             <div class="contact_body">
                 <div class="contact_form">
-                    <form action="">
+                    <form >
                         <div class="name_email">
-                            <input type="text " placeholder="Enter your name">
-                            <input type="email" placeholder="Enter your Email">
+                           <label for=""> Name :  <input required id="name" name="name" type="text " placeholder="Enter your name"></label>
+                           <label for="">Email :  <input required id="email" name="email" type="email" placeholder="Enter your Email"></label>
+                           <label for="">Phone Number :  <input required id="phone" name="phone" type="text" placeholder="Enter your phone  number"> </label>
+                            <label for="">Address : <input required id="address" name="address" type="text" placeholder="Enter Your address"></label>
                         </div>
-                        <textarea></textarea>
+                        <textarea required id="work" name="work" placeholder="Describe Your Work"></textarea>
                         <button class="submit_button">Submit</button>
                     </form>
                 </div>
@@ -226,6 +227,22 @@
         </div>
       
    </section>
+ <div class="container">
+    <table class="display_table">
+        <thead>
+          <tr>
+              <th>No.</th>
+              <th> Name</th>
+              <th>Email</th>
+              <th> Phone</th>
+              <th>  Address</th>
+              <th> Work</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+ </div>
    <footer>
     <div class="footer_content">
         <p>Copyright &copf; 2023 Imran's Creation</p>

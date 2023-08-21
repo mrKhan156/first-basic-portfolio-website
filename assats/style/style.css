@@ -237,6 +237,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
+    margin-bottom: 10px;
 }
 .contact_form{
     padding: 10px;
@@ -286,6 +287,39 @@ body{
     background-color: rgb(37, 139, 29);
     color: rgb(16, 16, 16);
     transition-duration: .5s;
+}
+.display_table{
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.display_table thead,
+ .display_table tbody{
+    width: 100%;
+    display: block;
+}
+.display_table thead{
+    background-color: #1acb5b;
+    color: white;
+}
+ .display_table tbody tr,
+ .display_table thead tr{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+.display_table th,
+.display_table td{
+   display: flex; 
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+}
+.display_table tbody tr:nth-child(odd){
+    background-color: antiquewhite;
+    color: black;
 }
 footer{
     background-color: rgb(234, 163, 76);
