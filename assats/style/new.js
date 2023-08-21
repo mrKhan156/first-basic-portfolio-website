@@ -1,7 +1,7 @@
 const creatTaskForm = document.querySelector('form');
-
+const tBody = document.querySelector('tbody');
 creatTaskForm.addEventListener('submit', (e)=>{
-    e.preventDefault()
+   
    const elements = e.target.elements;
 
    const task = {};
@@ -12,6 +12,7 @@ creatTaskForm.addEventListener('submit', (e)=>{
    });
    task.id = Math.floor(Math.random() * 10000 + 1000) + Date.now()
   addLocal(task);
+  e.target.reset()
 })
 
 function getLocal(key ='tasks'){
@@ -27,15 +28,21 @@ function addLocal(task){
 }
 function displayTask (){
     const tasks = getLocal();
-    const tr =document.createElement('tr');
-    tr.innerHTML = `
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
     
-    `
+    tasks?.map(({name, email, phone, address, work},index)=>{
+      
+        const tr =document.createElement('tr');
+    tr.innerHTML = `
+    <td>${index + 1}</td>
+    <td>${name}</td>
+    <td>${email}</td>
+    <td>${phone}</td>
+    <td>${address}</td>
+    <td>${work}</td>
+    
+    `;
+    tBody.append(tr)
+    })
 
 }
+displayTask();
