@@ -7,7 +7,7 @@ body{
 }
 .container{
    
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
     padding: 0px 15px;
     margin: auto;
@@ -35,7 +35,6 @@ body{
     padding: 20px 20px;
     list-style-type: none;
     justify-content: center;
-    
 }
 .nav_item{
     text-decoration: none;
@@ -96,6 +95,40 @@ body{
     background-color: rgb(114, 227, 33);
     padding: 20px 25px;
     border-radius: 25px;
+}
+.masg_btn{
+ 
+    height: 60px;
+    width: 60px;
+    background-color: rgb(222, 155, 11);
+    color: aliceblue;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius: 50px;
+position:fixed;
+bottom: 40px;
+right: 20px;
+
+animation-name: bounce;
+animation-duration: 1.2s;
+
+animation-fill-mode: both;
+animation-direction: alternate-reverse;
+animation-iteration-count: infinite;
+
+}
+@keyframes bounce{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(30px);
+    }
+}
+.masg_btn i{
+ font-size: 30px;
+ font-weight: 700;
 }
 .banner_button:hover{
     color: black;
