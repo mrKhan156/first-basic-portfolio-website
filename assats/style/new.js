@@ -1,7 +1,7 @@
 const creatTaskForm = document.querySelector('form');
 const tBody = document.querySelector('tbody');
 creatTaskForm.addEventListener('submit', (e)=>{
-   
+   e.preventDefault()
    const elements = e.target.elements;
 
    const task = {};
@@ -25,11 +25,14 @@ function addLocal(task){
     const tasks = getLocal();
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks))
+    displayTask()
 }
-function displayTask (){
+
+//display task function
+function displayTask(){
     const tasks = getLocal();
-    
-    tasks?.map(({name, email, phone, address, work},index)=>{
+    tBody.innerHTML=''
+    tasks?.map(({name, email, phone, address,id},index)=>{
       
         const tr =document.createElement('tr');
     tr.innerHTML = `
@@ -38,14 +41,45 @@ function displayTask (){
     <td>${email}</td>
     <td>${phone}</td>
     <td>${address}</td>
-    <td>${work}</td>
+    <td class="btn">
+    <button class="dlt_btn"  onclick='deleteTask(${id})'><i class="fa-solid fa-trash-can"></i></button>
+    <button class="edt_btn"><i class="fa-regular fa-pen-to-square"></i></button>
+    </td>
     
     `;
     tBody.append(tr)
     })
 
 }
-displayTask();
+
+displayTask()
+
+//delete data section
+function deleteTask(id){
+   const tasks = getLocal()
+   const newTask = tasks.filter(task =>{
+    if(task.id !== id){
+        return true;
+    }
+    else{
+        return false;
+    }
+   })
+
+   localStorage.setItem("tasks", JSON.stringify(newTask))
+   displayTask()
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // quotes section starts
 
