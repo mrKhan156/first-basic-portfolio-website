@@ -25,25 +25,26 @@ function addLocal(task){
     const tasks = getLocal();
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks))
-    displayTask()
+    // displayTask()
 }
 
 //display task function
 function displayTask(){
     const tasks = getLocal();
     tBody.innerHTML=''
-    tasks?.map(({name, email, phone, address,id},index)=>{
+    tasks?.reverse()?.map(({name, email, phone, address,id},index)=>{
       
         const tr =document.createElement('tr');
+       tr.id = `id_${id}`;
     tr.innerHTML = `
     <td>${index + 1}</td>
-    <td>${name}</td>
-    <td>${email}</td>
-    <td>${phone}</td>
-    <td>${address}</td>
-    <td class="btn">
-    <button class="dlt_btn"  onclick='deleteTask(${id})'><i class="fa-solid fa-trash-can"></i></button>
-    <button class="edt_btn"><i class="fa-regular fa-pen-to-square"></i></button>
+    <td class="name">${name}</td>
+    <td class="email">${email}</td>
+    <td class="phone">${phone}</td>
+    <td class="address">${address}</td>
+    <td class="btn action">
+    <button class="dlt_btn "  onclick='deleteTask(${id})'><i class="fa-solid fa-trash-can"></i></button>
+    <button class="edt_btn" onclick='editTask(${id})' ><i class="fa-regular fa-pen-to-square"></i></button>
     </td>
     
     `;
@@ -70,7 +71,79 @@ function deleteTask(id){
    displayTask()
 }
 
+//edit task section
+function editTask(id){
+   const tr = document.querySelector(`#id_${id}`);
+   //for name
+  const nameEl = tr.querySelector('.name');
+  const name = nameEl.textContent;
 
+  const nameInput = document.createElement('input');
+  nameInput.value = name;
+nameEl.innerHTML = '';
+nameEl.appendChild(nameInput)
+
+   //for email
+  const emailEl = tr.querySelector('.email');
+  const email = emailEl.textContent;
+  const emailInput = document.createElement('input');
+  emailInput.value = email;
+emailEl.innerHTML = '';
+emailEl.appendChild(emailInput)
+   //for phone
+  const phoneEl = tr.querySelector('.phone');
+  const phone = phoneEl.textContent;
+  const phoneInput = document.createElement('input');
+  phoneInput.value = phone;
+phoneEl.innerHTML = '';
+phoneEl.appendChild(phoneInput)
+   //for address
+  const addressEl = tr.querySelector('.address');
+  const address = addressEl.textContent;
+
+  const addressInput = document.createElement('input');
+  addressInput.value = address;
+addressEl.innerHTML = '';
+addressEl.appendChild(addressInput)
+
+
+   //for action
+   const actionEl = tr.querySelector('.action');
+   const actionButton = actionEl.innerHTML;
+   const saveBtn = document.createElement('button');
+
+   saveBtn.classList.add('edt_btn');
+   saveBtn.onclick = function(){
+    const newName = nameInput.value;
+    const newEmail = emailInput.value;
+    const newPhone = phoneInput.value;
+    const newAddress = addressInput.value;
+   
+    const tasks = getLocal()
+    const newTask = tasks.map(task =>{
+     if(task.id === id){
+       return {
+        ...task,
+        name:newName,
+        email:newEmail,
+        phone:newPhone,
+        address:newAddress
+       }
+     }
+     else{
+         return task;
+     }
+    })
+ 
+    localStorage.setItem("tasks", JSON.stringify(newTask))
+    displayTask()
+   }
+   saveBtn.innerHTML = `<i class="fa-solid fa-sd-card"></i>`
+   actionEl.innerHTML = '';
+   actionEl.appendChild(saveBtn)
+   
+
+}
 
 
 
