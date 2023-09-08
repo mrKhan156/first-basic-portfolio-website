@@ -344,12 +344,71 @@ margin-top: 20px;
     background-color: lightcyan;
 }
 
+/*stop watch section starts*/
+.stopWatch{
+    margin-top: 40px;
+    padding-top: 40px;
+    height: 450px;
+  background: url(../images/water.jpg) no-repeat center center/cover ;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+}
+.inner_watch{
+    width: 60%;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 3px;
+    transform: translateY(-40px);
+}
+#timer{
+
+    font-size: 72px;
+    text-align: center;
+    margin: 0px auto;
+    padding: 35px;
+}
+.stopWatch h4{
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    transform: translateY(-40px);
+}
+.buttons{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.buttons button{
+    margin: 0 10px;
+    border: none;
+ background-color: transparent;
+}
+.buttons button i{
+    font-size: 2rem;
+    padding: 10px;
+    color: #fff;
+    width: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+#play{
+background-color: green;
+}
+#reset{
+background-color: red;
+}
+#pause{
+    background-color: orange;
+}
 
 
-
-
-
-
+/*stop watch section ends*/
 
 .contact .heading_rapper{
     text-align: left;
