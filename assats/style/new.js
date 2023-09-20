@@ -288,3 +288,22 @@ hours = 0;
 document.getElementById('timer').innerHTML = "00:00:00";
 });
 //stopWatch section ends
+
+// clock section starts
+const hour = document.querySelector('#hour');
+const minute = document.querySelector('#minute');
+const second = document.querySelector('#second');
+const progress = document.querySelector('#progress');
+
+function showCurrentTime(){
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    hour.textContent = hours;
+    minute.textContent = minutes;
+    second.textContent = seconds;
+    progress.style.width = (seconds/60)*100 + '%';
+}
+setInterval(showCurrentTime, 1000);

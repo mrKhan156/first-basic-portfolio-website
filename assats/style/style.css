@@ -1,9 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
 body{
     margin: 0;
 }
 :root{
     --montserrat: 'Montserrat', sans-serif;
     --opensans:'Open Sans', sans-serif;
+    --purple-dark: #5F546E;
+    --purple-light: #827593;
+    --gray-light: #E5E3E8;
+    --gray-dark: #A5A2A9;
+    --light: #fcf8fb;
+    --transition: all 150ms cubic-bezier(.46, 1.13, .67, .87);
+
 }
 .container{
    
@@ -136,6 +145,118 @@ animation-iteration-count: infinite;
  font-size: 30px;
  font-weight: 700;
 }
+
+/* clock section starts */
+
+.clock-container {
+    width: 250px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 10px 10px 10px;
+    background-color: var(--purple-dark);
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.825);
+}
+.clock-container .hours span {
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: right;
+   padding-top: 10px;
+  
+}
+.clock-container .minutes span {
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: right;
+   padding-top: 10px;
+  
+}
+.clock-container .seconds span {
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: right;
+   padding-top: 10px;
+  
+}
+
+.clock-container p {
+    font-size: 30px;
+    color: var(--light);
+    font-weight: 100;
+    transform: translateY(-8px);
+    margin-top: 20px;
+  
+}
+
+.clock-container p:first-letter {
+    letter-spacing: 5px;
+}
+/* .clock-container p {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 900;
+    color: var(--purple-dark);
+    letter-spacing: .5px;
+    cursor: pointer;
+} */
+.clock .bottom {
+    height: 7px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: #aaa4b2;
+    margin-left: 0px;
+}
+.clock .bottom .progress-bar {
+ height: 7px;
+ background-color: rgb(70, 70, 70);
+
+ border-radius: 10px;
+ margin-left: 0;
+}
+.colon {
+    --size: 3px;
+    width: var(--size);
+    height: 15px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.colon::before {
+    content: '';
+    width: 100%;
+    height: var(--size);
+    background-color: #9892a3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+.colon::after {
+    content: '';
+    width: 100%;
+    height: var(--size);
+    background-color: #9892a3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+
+
+
+
+/* clock section ends */
+
 .banner_button:hover{
     color: black;
     background: wheat;
