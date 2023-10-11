@@ -71,7 +71,7 @@ body{
 .banner_contant{
     text-align: right;
 position: absolute;
-top: 170px;
+top: 70px;
 right: 50px;
 
 
@@ -97,8 +97,7 @@ right: 50px;
     min-height: 51.2px;
 }
 
-.banner_contant p{
-    max-width: 200px;
+.banner_contant {
     text-align: right;
 
 }

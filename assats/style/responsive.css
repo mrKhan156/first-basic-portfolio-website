@@ -5,9 +5,12 @@
         width: 95%;
     }
     .banner_contant {
-        
+       
         padding-top: 15px;
         padding-bottom: 50px;
+    }
+    .banner_contant h2{
+        font-size: 20px;
     }
     .banner_heading {
 
@@ -62,6 +65,18 @@
 @media (min-width:576px) and (max-width:767.9px){
     .container{
         width: 576px;
+    }
+    .banner_contant{  
+      gap: 5px;
+    
+    }
+    .banner_contant h2{
+        font-size: 20px;
+        margin-bottom: -8px;
+    }
+    .banner_contant h4{
+        font-size: 16px;
+        margin-bottom: -8px;
     }
     .service_list {
         
